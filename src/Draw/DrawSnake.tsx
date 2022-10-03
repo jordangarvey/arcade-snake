@@ -1,8 +1,10 @@
-import { boardSize, blockSize } from "../Constants";
+import { blockSize } from "../Constants";
 
-function DrawGrid(ctx: CanvasRenderingContext2D, snakePosition: coordinates[], snakeDirection: direction) {
+function DrawSnake(ctx: CanvasRenderingContext2D, snakePosition: coordinates[]) {
 	ctx.fillStyle = "green";
-	ctx.fillRect(snakePosition[0].x, snakePosition[0].y, blockSize, blockSize);
+	for(const c of snakePosition) {
+		ctx.fillRect(c.x, c.y, blockSize, blockSize);
+	}
 }
 
-export default DrawGrid;
+export default DrawSnake;
